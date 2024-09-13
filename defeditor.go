@@ -4,8 +4,10 @@ package defeditor
 
 import (
 	"fmt"
+	"math/rand/v2"
 	"os"
 	"os/exec"
+	"strconv"
 )
 
 // Open creates a temporary file and opens your preferred graphical file editor.
@@ -13,8 +15,8 @@ import (
 //
 // Open создаёт временный файл и открывает предпочтительный файловый редактор
 // (в ubuntu это "Image viewer".)
-func Open(name string) (string, error) {
-	tmpFile, err := os.Create(os.TempDir() + "/" + name)
+func Open() (string, error) {
+	tmpFile, err := os.Create(os.TempDir() + "/tmp_file_" + strconv.Itoa(rand.Int()))
 	if err != nil {
 		os.Exit(1)
 	}
