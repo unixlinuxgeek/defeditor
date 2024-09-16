@@ -1,4 +1,5 @@
-// File utilities for linux systems
+// Running a default graphical text editor(not console) for text file
+// Запуск графического текстового редактора по умолчанию (не консольного) для текстового файла
 
 package defeditor
 
